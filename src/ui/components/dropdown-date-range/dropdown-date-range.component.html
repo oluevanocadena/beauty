@@ -1,0 +1,41 @@
+<grid [gap]="[8,8]" [mode]="'flex'" [direction]="'left-center'">
+  <button tuiButton nz-dropdown [nzDropdownMenu]="dropdown" [(nzVisible)]="open" type="button" appearance="outline"
+    size="m">
+    <grid [gap]="[8,8]" [mode]="'flex'" [direction]="'left-center'">
+      <span class="f-14 fw-600 f-black-1">
+        {{ labelDate | capitalizeFirstLetter }}
+      </span>
+      <span class="material-symbols-outlined" [ngClass]="{'rotate': open } ">
+        expand_more
+      </span>
+    </grid>
+  </button>
+
+  <button tuiButton type="button" appearance="outline" size="m" [disabled]="true">
+    <span class="f-14 fw-600 f-black-2">
+      vs. {{ ComparativeLabel | capitalizeFirstLetter }}
+    </span>
+  </button>
+</grid>
+
+<nz-dropdown-menu #dropdown>
+  <card [radius]="6" [shadow]="true">
+    <grid [gap]="[16,16]" [xs]="'1fr'" [md]="'1fr max-content'" [lg]="'1fr max-content'" [padding]="'1rem 0.5rem'">
+      <grid [gap]="[2,16]">
+        <ng-container *ngFor="let date of labelDates; let index = index">
+          <button (click)="onButtonDateLabelClick(date, index)" tuiButton type="button" appearance="flat" size="l"
+            class="f-black-1 f-16 button-left" [ngClass]="{ 'active': index === indexLabel }">
+            <span class="tui-text_body-m f-black-2 fw-600">
+              {{ date }}
+            </span>
+          </button>
+        </ng-container>
+      </grid>
+      <grid [gap]="[16,16]">
+        <tui-calendar [value]="value.rangeDate" [showAdjacent]="false" [maxViewedMonth]="maxViewedMonth"
+          [(hoveredItem)]="hoveredItem" (dayClick)="onDayClick($event)">
+        </tui-calendar>
+      </grid>
+    </grid>
+  </card>
+</nz-dropdown-menu>

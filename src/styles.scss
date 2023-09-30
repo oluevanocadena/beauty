@@ -1,0 +1,46 @@
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+@import "~ng-zorro-antd/ng-zorro-antd.min.css";
+
+@import './assets/theme/tui/tui.scss';
+@import './assets/theme/tui/tui.button.scss';
+@import './assets/theme/tui/tui.toast.scss';
+@import './assets/theme/tui/tui.dialog.scss';
+@import './assets/theme/tui/tui.tabs.scss';
+@import './assets/theme/tui/tui.font.scss';
+@import './assets/theme/tui/tui.colors.scss';
+@import './assets/theme/tui/tui.borders.scss';
+@import './assets/theme/tui/tui.hint.scss';
+@import './assets/theme/tui/tui.input.scss';
+@import './assets/theme/tui/tui.notifications.scss';
+@import './assets/theme/tui/tui.carousel.scss';
+@import './assets/theme/tui/tui.avatar.scss';
+@import './assets/theme/tui/tui.select.scss';
+
+@import './assets/theme/ng-zorro/modal.scss';
+@import './assets/theme/ng-zorro/radio.scss';
+@import './assets/theme/ng-zorro/segments.scss';
+@import './assets/theme/ng-zorro/tabs.scss';
+@import './assets/theme/ng-zorro/menu.scss';
+
+@import './assets/theme/font/font.weights.scss';
+@import './assets/theme/font/font.sizes.scss';
+@import './assets/theme/font/font-colors.scss';
+@import './assets/theme/font/font-aligns.scss';
+@import './assets/theme/font/font-styles.scss';
+@import './assets/theme/font/font-family.scss';
+
+@import './assets/theme/animations/animations.scss';
+@import './assets/theme/borders.scss';
+@import './assets/theme/display.scss';
+@import './assets/theme/shadows.scss';
+@import './assets/theme/widths.scss';
+@import './assets/theme/scroll.scss';
+@import './assets/theme/height.scss';
+@import './assets/theme/padding.scss';
+@import './assets/theme/backgrounds.scss';
+@import './assets/theme/maps.scss';
+
+@import './assets/icomoon/style.css';

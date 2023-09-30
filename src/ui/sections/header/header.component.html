@@ -1,0 +1,161 @@
+<div class="header" [ngClass]="{'tui-container_fullwidth' : adaptive === false }">
+  <grid [gap]="[16,32]" [xs]=" 'min-content 1fr'" [md]="'max-content 1fr max-content'"
+    [lg]="'max-content 1fr max-content'" [padding]="'0.5rem 0rem'"
+    [ngClass]="{'tui-container tui-container_adaptive' : adaptive }">
+
+
+    <grid [gap]="[16,8]" [mode]="'flex'" [direction]="'left-center'">
+      <img [routerLink]="routes.Landing" class="pointer" style="height:28px;" src="assets/icons/logo.svg">
+      <img [routerLink]="routes.Landing" class="pointer" style="height:42px;" src="assets/icons/logo_letters.svg">
+    </grid>
+
+    <grid *ngIf="isMobileOrTablet === false" [gap]="[16,16]" [mode]="'flex'" [direction]="'right-center'">
+      <grid [skeleton]="busy" [skeletonWidth]="'50%'" [height]="busy ? '36px': 'auto'" [gap]="[16,32]" [mode]="'flex'"
+        [direction]="'left-center'">
+        <a class="f-black-1 f-14 pointer fw-400" [attr.href]="routes.PropertySearch">
+          Buscar propiedades
+        </a>
+        <a class="f-black-1 f-14 pointer fw-400" [attr.href]="routes.OwnerArea">
+          Area de propietarios
+        </a>
+        <a class="f-black-1 f-14 pointer fw-400" [attr.href]="routes.Help">
+          Ayuda
+        </a>
+      </grid>
+    </grid>
+
+
+
+    <grid [gap]="[16,16]" [mode]="'flex'" [direction]="'right-center'">
+      <grid *ngIf="isDesktopOrLargeDesktop === true" [skeleton]="busy" [skeletonWidth]="'150px'"
+        [height]="busy ? '36px': 'auto'">
+        <button *ngIf="IsOwnerPropertyToo === false" tuiButton type="button" [size]="'s'" appearance="flat"
+          [routerLink]="routes.RentalOwnersArea">
+          <span class="fw-600 f-black-1">
+            Pon tu casa en Rummio
+          </span>
+        </button>
+        <button *ngIf="IsOwnerPropertyToo === true && isLoggedIn" tuiButton type="button" [size]="'s'" appearance="flat"
+          [routerLink]="routes.RentalOwnersArea">
+          <span class="fw-600 f-black-1">
+            Modo propietario
+          </span>
+        </button>
+      </grid>
+      <!----------------------
+        Login button
+      ----------------------->
+      <grid [skeleton]="busy" [skeletonWidth]="'60px'" [height]="busy ? '36px': 'auto'">
+        <rummio-tenant-dropdown-button></rummio-tenant-dropdown-button>
+      </grid>
+    </grid>
+
+
+  </grid>
+</div>
+
+
+<!---------------------------------------------
+* @section - Right menu
+  Show the right menu.
+----------------------------------------------->
+<nz-drawer [nzClosable]="false" [nzVisible]="openMenu" [nzPlacement]="'right'" [nzTitle]="null"
+  [nzWidth]="isMobile ? widthWindow : '350px'" [nzCloseOnNavigation]="true" (nzOnClose)="openMenu=!openMenu">
+  <ng-container *nzDrawerContent>
+
+    <grid [gap]="[32,16]" [height]="'100%'" [orientation]="'horizontal'" [templateRow]="'max-content 1fr max-content'"
+      class="overflow-y-auto">
+
+      <!-- Close button -->
+      <grid [gap]="[8,16]">
+        <grid [gap]="[16,16]" [xs]="'1fr max-content'" [md]="'1fr max-content'" [lg]="'1fr max-content'">
+          <grid [gap]="[16,8]" [mode]="'flex'" [direction]="'left-center'">
+            <img [routerLink]="routes.Landing" class="pointer" style="height:30px;" src="assets/icons/logo.svg">
+            <img [routerLink]="routes.Landing" class="pointer" style="height:48px;" src="assets/icons/logo_letters.svg">
+          </grid>
+          <button-close [appearance]="'outline'" [size]="'s'" (click)="toggle()"></button-close>
+        </grid>
+        <ui-title-subtitle [subtitle]="'Ingresa para rentar una propiedad'"></ui-title-subtitle>
+      </grid>
+
+      <grid [gap]="[24,16]">
+
+        <grid [gap]="[16,16]">
+          <grid [gap]="[8,8]" [mode]="'flex'" [direction]="'left-center'">
+
+            <button tuiButton type="button" [size]="'s'" appearance="primary" [routerLink]="routes.RentalOwnersArea">
+              Pon tu casa en Rummio
+            </button>
+          </grid>
+          <span class="f-12 f-black-2">Encuentra una casa o departamento para renta sin aval y de manera
+            confiable.</span>
+        </grid>
+
+
+        <grid [gap]="[12,16]" [padding]="'1rem 0'" class="brdr-top">
+
+          <button [routerLink]="routes.PropertySearch" tuiButton [appearance]="'flat'" class="button-left"
+            style="padding: auto 0!important;" [type]="'button'" [size]="'s'">
+            <grid [gap]="[8,8]" [mode]="'flex'" [direction]="'left-center'">
+              <span class="material-symbols-outlined f-black-1">
+                cottage
+              </span>
+              <span class="f-black-1">
+                Buscar propiedades
+              </span>
+            </grid>
+          </button>
+
+          <button [routerLink]="routes.RentalOwnersArea" tuiButton [appearance]="'flat'" [type]="'button'" [size]="'s'"
+            class="button-left">
+            <grid [gap]="[8,8]" [mode]="'flex'" [direction]="'left-center'">
+              <span class="material-symbols-outlined f-black-1">
+                king_bed
+              </span>
+              <span class="f-black-1">
+                Area de propietarios
+              </span>
+            </grid>
+          </button>
+
+          <button [routerLink]="routes.AboutUs" tuiButton [appearance]="'flat'" class="button-left" [type]="'button'"
+            [size]="'s'">
+            <grid [gap]="[8,8]" [mode]="'flex'" [direction]="'left-center'">
+              <span class="material-symbols-outlined f-black-1">
+                location_away
+              </span>
+              <span class="f-black-1">
+                Acerca de nosotros
+              </span>
+            </grid>
+          </button>
+
+          <button [routerLink]="routes.Logout" tuiButton [appearance]="'flat'" [type]="'button'" [size]="'s'"
+            class="button-left">
+            <grid [gap]="[8,8]" [mode]="'flex'" [direction]="'left-center'">
+              <span class="material-symbols-outlined f-black-1">
+                contact_support
+              </span>
+              <span class="f-black-1">
+                Ayuda
+              </span>
+            </grid>
+          </button>
+
+        </grid>
+      </grid>
+
+      <grid [gap]="[8,16]" [padding]="'1rem 0 0 0'" class="brdr-top">
+        <span class="f-12 fw-600 f-black-1"> Rummio México S.A. de C.V.</span>
+        <grid [gap]="[0,16]">
+          <a tuiLink class="f-12">Términos y Privacidad</a>
+          <span class="f-12 f-black-2">Versión 1.0.1 15/08/2023</span>
+        </grid>
+        <span class="f-12 f-black-2">© 2023 Todos los derechos reservados.</span>
+      </grid>
+    </grid>
+
+
+
+  </ng-container>
+</nz-drawer>

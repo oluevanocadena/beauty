@@ -1,0 +1,5 @@
+<img *ngIf="loading===false" [attr.src]="src" class="w-full img-cover pointer" [ngClass]="{'hoverable': hoverable }"
+  [style]="getStyle()" />
+
+<grid [hidden]="!loading" [skeleton]="loading" [skeletonWidth]="skeletonWidth" [height]="height">
+</grid>

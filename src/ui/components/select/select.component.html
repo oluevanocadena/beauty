@@ -1,0 +1,20 @@
+<tui-select [attr.ghost]="ghost ? true : null" *tuiLet="options" [tuiTextfieldLabelOutside]="false" [tuiDropdownOffset]="6" [tuiTextfieldSize]="size"
+  [valueContent]="options ? stringify(options) : loading" [(ngModel)]="value" [tuiTextfieldCleaner]="closable" [tuiDropdownOffset]="offset"
+  (ngModelChange)="onInnerComponentValueChange($event)" [attr.disabled]="disabled" class="fw-300">
+
+  <div [contentRenderer]="label"></div>
+  <b *ngIf="required" class="f-negative">*</b>
+
+  <input tuiTextfield [attr.placeholder]="placeholder" [tuiTextfieldSize]="size" class="fw-300" />
+
+  <div *tuiDataList tuiScrollable>
+    <tui-data-list *ngIf="options; else loading">
+      <button *ngFor="let item of options" tuiOption [value]="item.Id" class="fw-300">
+        {{ item.Description }}
+      </button>
+    </tui-data-list>
+  </div>
+  <ng-template #loading>
+    <tui-loader class="tui-space_vertical-3 loader"></tui-loader>
+  </ng-template>
+</tui-select>

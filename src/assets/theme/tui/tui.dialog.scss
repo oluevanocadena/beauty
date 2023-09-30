@@ -1,0 +1,49 @@
+.t-heading {
+    letter-spacing: -0.0395rem !important;
+    display: block !important;
+}
+
+tui-dialog div > .t-heading {
+    font-size: 1.35rem !important;
+}
+
+tui-notification[data-status=error] {
+    border: 3px solid #ffe7eb !important;
+}
+
+tui-notification[data-status=success] {
+    border: 3px solid #cfe8d3 !important;
+}
+
+tui-notification[data-status=info] {
+    border: 3px solid #b4cdef !important;
+}
+
+.t-overlay {
+    background: rgb(2 2 2 / 33%) !important;
+}
+
+tui-alert[role=alert] {
+    width: 24rem !important;
+}
+
+@media screen and (max-width: 425px) {
+
+    tui-alert[role=alert] {
+        width: 18rem !important;
+    }
+}
+
+.ant-dropdown-menu {
+    border-radius: 8px !important;
+}
+
+tui-dialog[data-size=fullscreen] > div.t-content,
+tui-dialog[data-size=page] > div.t-content {
+    padding: 0 !important;
+    margin: 0 !important;
+}
+tui-dialog[data-size=fullscreen] .t-heading,
+tui-dialog[data-size=page] .t-heading {
+    margin: 0 !important;
+}

@@ -1,0 +1,34 @@
+.ant-radio-inner::after {
+  background-color: #fff !important;
+  top: 50% !important;
+  left: 50% !important;
+  width: 16px !important;
+  height: 16px !important;
+
+}
+
+.ant-radio-inner {
+  width: 24px !important;
+  height: 24px !important;
+  border-color: #b3b3b3 !important;
+  border-style: solid !important;
+  border-width: 2px !important;
+}
+
+.ant-radio-checked .ant-radio-inner {
+  border-color: var(--tui-primary) !important;
+  background: var(--tui-primary) !important;
+}
+
+.ant-radio {
+  top: 0.5em !important;
+}
+
+span.ant-radio+* {
+  padding-right: 12px !important;
+  padding-left: 12px !important;
+}
+
+.ant-radio-wrapper {
+  line-height: 2rem;
+}

@@ -1,0 +1,11 @@
+@import '@taiga-ui/core/styles/taiga-ui-local.scss';
+
+:host {
+  display: block;
+  width: inherit;
+  position: relative;
+}
+
+:host.dashed {
+  border: 1px dashed #ededed !important;
+}

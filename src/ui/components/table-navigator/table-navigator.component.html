@@ -1,0 +1,9 @@
+<div tuiGroup class="group" [collapsed]="true">
+  <button (click)="decrementPage()" tuiIconButton type="button" appearance="outline" size="m" title="Pagina anterior"
+    icon="tuiIconChevronLeftLarge" class="tui-group__auto-width-item" [disabled]="dataLength === 0 || isFirstPage">
+  </button>
+  <button (click)="incrementPage()" tuiIconButton type="button" appearance="outline" size="m" title="Pagina Siguiente"
+    icon="tuiIconChevronRightLarge" class="tui-group__auto-width-item"
+    [disabled]="dataLength === 0 || (dataLength < maxLengthToPage)">
+  </button>
+</div>

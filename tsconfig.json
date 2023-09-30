@@ -1,0 +1,47 @@
+{
+  "compileOnSave": false,
+  "compilerOptions": {
+    "baseUrl": "./",
+    "outDir": "./dist/out-tsc",
+    "forceConsistentCasingInFileNames": true,
+    "strict": true,
+    "noImplicitOverride": true,
+    "noPropertyAccessFromIndexSignature": true,
+    "noImplicitReturns": true,
+    "noFallthroughCasesInSwitch": true,
+    "sourceMap": true,
+    "declaration": false,
+    "downlevelIteration": true,
+    "experimentalDecorators": true,
+    "emitDecoratorMetadata": true,
+    "strictNullChecks": false,
+    "moduleResolution": "node",
+    "removeComments": true,
+    "importHelpers": true,
+    "resolveJsonModule": false,
+    "allowSyntheticDefaultImports": true,
+    "target": "ES2022",
+    "module": "ES2022",
+    "useDefineForClassFields": false,
+    "lib": ["ES2022", "dom"],
+    "skipLibCheck": true,
+    "paths": {
+      "@ui/*": ["src/ui/*"],
+      "@basic/*": ["src/services/common/basic/*"],
+      "@common/*": ["src/services/common/common/*"],
+      "@rummio/*": ["src/services/rummio/*"]
+    },
+    "typeRoots": ["./node_modules/@types", "./path_to_custom_types_if_any"],
+    "types": ["google.maps"]
+  },
+  "angularCompilerOptions": {
+    "enableI18nLegacyMessageIdFormat": false,
+    "strictInjectionParameters": false,
+    "strictInputAccessModifiers": true,
+    "strictTemplates": true,
+    "strictNullChecks": false,
+    "optimization": false,
+    "aot": false,
+    "buildOptimizer": false
+  }
+}

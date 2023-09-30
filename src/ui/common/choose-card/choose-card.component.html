@@ -1,0 +1,51 @@
+<grid [gap]="[16,16]" class="brdr-2-dashed brdr-radius-6 w-all" [padding]="'0.5rem 0.5rem 0.5rem 1rem'"
+  [xs]="'1fr max-content'" [md]="'1fr max-content'">
+  <grid [gap]="[8,8]" [mode]="'flex'" [direction]="'left-center'">
+    <span [contentRenderer]="label" class="fw-600 f-black-2 f-14 break-word f-lh-16"></span>
+  </grid>
+
+  <ng-container [ngSwitch]="mode">
+    <grid *ngSwitchCase="'choose'" [gap]="[16,16]">
+      <button *ngIf="!readonly" (click)="choose()" tuiButton type="button" [showLoader]="busy" [disabled]="busy===true"
+        [size]="size" [appearance]="appearance">
+        <span class="fw-600">{{ buttonText }}</span>
+      </button>
+      <span *ngIf="readonly" style="min-height: 44px;">&nbsp;</span>
+    </grid>
+
+    <grid *ngSwitchCase="'delete'" [gap]="[16,16]">
+      <button *ngIf="!readonly" (click)="choose()" tuiButton tuiIconButton type="button" size="l" [showLoader]="busy"
+        [disabled]="busy===true" appearance="secondary-destructive">
+        <span class="material-symbols-outlined">delete</span>
+      </button>
+      <span *ngIf="readonly" style="min-height: 48px;">&nbsp;</span>
+    </grid>
+
+    <grid *ngSwitchCase="'more'" [gap]="[16,16]">
+      <grid [gap]="[8,8]" [mode]="'flex'" [direction]="'right-center'">
+        <button tuiButton tuiIconButton type="button" [size]="size" [appearance]="appearance" nz-dropdown
+          [showLoader]="busy" [disabled]="busy===true" nzTrigger="click" [nzDropdownMenu]="menu">
+          <span class="material-symbols-outlined">more_horiz</span>
+
+          <nz-dropdown-menu #menu="nzDropdownMenu">
+            <card [padding]="'0.75rem'" [shadow]="true" [radius]="8" class="bg-01">
+              <grid [gap]="[12,16]">
+                <span class="f-12 f-black-3 fw-600">
+                  ACCIONES
+                </span>
+                <grid [gap]="[8,16]" label="Acciones">
+                  <button tuiButton *ngFor="let action of actions" [size]="action.Size" [appearance]="action.Appearance"
+                    (click)="action.Action(this.metadata)">
+                    {{ action.Label }}
+                  </button>
+                </grid>
+              </grid>
+            </card>
+          </nz-dropdown-menu>
+        </button>
+      </grid>
+      <span *ngIf="readonly" style="min-height: 48px;">&nbsp;</span>
+    </grid>
+
+  </ng-container>
+</grid>

@@ -1,0 +1,23 @@
+card {
+  background-color: white;
+  box-shadow: rgba(0, 0, 0, 0.24) 0px 3px 8px;
+}
+
+[nz-radio] {
+  display: block;
+}
+
+
+.rotate {
+  transition-duration: 200ms;
+}
+
+.rotate,
+.rotate:hover {
+  transform: rotate(180deg);
+}
+
+
+.active {
+  background-color: var(--tui-base-03) !important;
+}

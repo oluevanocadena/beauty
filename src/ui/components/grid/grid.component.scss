@@ -1,0 +1,12 @@
+:host([ui-responsive]) {
+  max-width: 1444px !important;
+}
+
+:host([ui-responsive-md]) {
+  max-width: 720px !important;
+}
+
+:host([ui-responsive-sm]) {
+  max-width: 590px !important;
+}
+

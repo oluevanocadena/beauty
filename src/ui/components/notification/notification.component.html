@@ -1,0 +1,42 @@
+<ng-template #notificationTemplate>
+  <grid [gap]="[0,16]" [xs]="'max-content 1fr'" [md]="'max-content 1fr'" [lg]="'max-content 1fr'"
+    class="{{ getClassGradientColor }}" [padding]="'0 0 0 1rem'">
+    <grid [gap]="[16,16]" [mode]="'flex'" [direction]="'left-top'" [padding]="'0.75rem 0 0'">
+      <grid [gap]="[16,16]" class="bg-white-cricle">
+        <grid [gap]="[16,16]" [padding]="'0rem'" class="f-01 brdr-radius-16 {{ getClassColor }} h-content w-content">
+          <span class="material-symbols-outlined f-20">
+            {{ getIcon }}
+          </span>
+        </grid>
+      </grid>
+    </grid>
+    <grid [gap]="[8,8]" [mode]="'flex'" [direction]="'left-center'">
+      <grid [gap]="[8,16]" [padding]="'0.85rem 0'">
+        <grid [gap]="[8,16]">
+          <span class="f-17 f-lh-22 f-black-1 fw-600" [contentRenderer]="title">
+          </span>
+          <span class="f-13 f-lh-18 f-black-2" [contentRenderer]="message">
+          </span>
+        </grid>
+        <button *ngIf="url && urlText" tuiLink type="button" [pseudo]="true" [routerLink]="url" class="f-16 fw-600">
+          <grid [gap]="[8,4]" [mode]="'flex'" [direction]="'left-center'">
+            <span class="f-15">
+              {{ urlText }}
+            </span>
+            <span class="material-symbols-outlined f-16">
+              open_in_new
+            </span>
+          </grid>
+        </button>
+      </grid>
+    </grid>
+  </grid>
+</ng-template>
+
+<ng-template #closeIconTemplate>
+  <grid [gap]="[8,8]" [mode]="'flex'" [direction]="'right-center'">
+    <span class="material-symbols-outlined f-22">
+      close
+    </span>
+  </grid>
+</ng-template>

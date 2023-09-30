@@ -1,0 +1,11 @@
+<grid [gap]="[16,16]" [xs]="'max-content 1fr'" [md]="'max-content 1fr max-content'" [width]="'100%'">
+  <button-close (click)="handleCancel()"></button-close>
+  <grid [gap]="[8,8]" [mode]="'flex'" [direction]="'center-center'">
+    <span class="f-commissioner-bold f-18">
+      {{title}}
+    </span>
+  </grid>
+  <grid *ngIf="isMobile === false" [gap]="[16,16]" [width]="'60px'">
+    &nbsp;
+  </grid>
+</grid>

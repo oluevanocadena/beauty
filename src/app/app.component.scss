@@ -1,0 +1,23 @@
+.logo-text {
+    font-family: 'Fascinate', cursive;
+}
+
+.top-bar {
+    box-shadow: rgba(99, 99, 99, 0.2) 0 2px 8px 0;
+}
+
+.banner{
+  background: url('/assets/img/banner.png');
+  background-position: top;
+  background-size: cover;
+}
+
+// Media query
+@media (max-width: 576px) {
+  .banner{
+    background: none;
+    background-color: #ea99a2;
+    background-position: top;
+    background-size: cover;
+  }
+}

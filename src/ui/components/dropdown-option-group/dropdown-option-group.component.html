@@ -1,0 +1,40 @@
+<!-- <tui-hosted-dropdown tuiDropdownAlign="right" [content]="dropdown" [(open)]="open">
+  <button tuiButton type="button" appearance="secondary" [iconRight]="arrow">
+    {{ selectedOptionName }}
+  </button>
+</tui-hosted-dropdown> -->
+
+<button tuiButton nz-dropdown [nzDropdownMenu]="dropdown" [(nzVisible)]="open" type="button" appearance="{{appearance}}"
+  class="brdr-radius-6">
+  <grid [gap]="[8,8]" [mode]="'flex'" [direction]="'left-center'">
+    <span class="f-15">
+      {{ selectedOptionName }}
+    </span>
+    <span class="material-symbols-outlined" [ngClass]="{'rotate': open } ">
+      expand_more
+    </span>
+  </grid>
+</button>
+
+<nz-dropdown-menu #dropdown>
+  <card [radius]="6" [shadow]="true">
+    <form [formGroup]="form">
+      <grid [gap]="[8,16]" [padding]="'1rem'">
+        <grid *ngIf="label" [gap]="[16,16]">
+          <ui-text class="tui-text_body-s f-14 f-black-2 fw-600">
+            {{ label | uppercase }}
+          </ui-text>
+        </grid>
+        <grid [gap]="[16,16]">
+          <nz-radio-group formControlName="SelectedOption" (ngModelChange)="onInnerComponentValueChange($event)">
+            <label *ngFor="let option of options" nz-radio [nzValue]="option.Id" class="f-black-2 f-15">
+              <span class="lh-19 t-left">
+                {{ option.Description }}
+              </span>
+            </label>
+          </nz-radio-group>
+        </grid>
+      </grid>
+    </form>
+  </card>
+</nz-dropdown-menu>

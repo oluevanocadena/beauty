@@ -1,0 +1,14 @@
+:host {
+  cursor: pointer;
+  color: var(--tui-text-02);
+  transition: transform 0.1s; /* Transición suave */
+}
+
+:host:hover {
+  color: #000;
+}
+
+:host:active:not([disabled]) {
+    transform: scale(0.92);
+}
+

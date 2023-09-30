@@ -1,0 +1,10 @@
+$step: 1;
+
+@for $index from 1 through 128 {
+
+    .h-#{$step} {
+        height: #{$step}px !important;
+    }
+
+    $step: $step + 1;
+}

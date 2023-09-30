@@ -1,0 +1,11 @@
+<grid [gap]="[6,16]" [padding]="'0 0.15rem 0.5rem'" [width]="'fit-content'"
+  [attr.mode]="orientation === 'horizontal' ? 'flex' : null"
+  [attr.direction]="orientation === 'horizontal' ? 'left-center' : null" class="effector"
+  [ngClass]="{ 'active f-black-1' : selected, 'f-black-3': selected === false }">
+  <span class="material-symbols-outlined f-26 t-center fw-300">
+    {{icon}}
+  </span>
+  <span class="f-lato fw-500 t-center" style="font-size: 0.80rem;">
+    {{label}}
+  </span>
+</grid>

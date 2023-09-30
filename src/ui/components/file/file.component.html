@@ -1,0 +1,56 @@
+<tui-input-files *ngIf="uploaded === false && busy === false" accept="image/*" [(ngModel)]="file"
+  (ngModelChange)="makeRequest($event)" [attr.disabled]="disabled" (reject)="onReject($event)"
+  [link]="'clic para elegir un archivo'" [label]="'o arrástralo aquí'">
+</tui-input-files>
+
+
+<card [radius]="16" *ngIf="uploaded === true && busy === false">
+  <grid [gap]="[16,16]" [xs]="'min-content 1fr min-content'" [md]="'min-content 1fr min-content'"
+    [lg]="'min-content 1fr min-content'" [padding]="'16px'">
+    <grid [gap]="[16,16]">
+      <span class="material-symbols-outlined f-positive">
+        check_circle_outline
+      </span>
+    </grid>
+    <div #contenedorPadre1>
+      <grid [gap]="[16,16]">
+        <!-- [style.width.px]="isMobileOrTablet ? 200 : 290" -->
+        <grid [gap]="[8,8]" [mode]="'flex'" [direction]="'left-center'" [style.width.px]="290">
+          <ui-text [xs]="'tui-text_body-m'" [md]="'tui-text_body-m'" style="width: inherit;">
+            <span class="ellipsis">
+              {{ utilsService.decodeFileNameFromUrl(blobTemporalFile?.TemporalFileUrl) }}
+            </span>
+          </ui-text>
+        </grid>
+      </grid>
+    </div>
+    <grid [gap]="[16,16]">
+      <span class="material-symbols-outlined pointer" (click)="removeFile()">
+        close
+      </span>
+    </grid>
+  </grid>
+</card>
+
+<card [radius]="16" *ngIf="busy === true">
+  <grid [gap]="[16,16]" [xs]="'min-content 1fr min-content'" [md]="'min-content 1fr min-content'"
+    [lg]="'min-content 1fr min-content'" [padding]="'16px'">
+    <grid [gap]="[16,16]">
+      <span class="material-symbols-outlined f-information ui-spiner">
+        restart_alt
+      </span>
+    </grid>
+    <div #contenedorPadre>
+      <grid [gap]="[16,16]">
+        <!-- [style.width.px]="isMobileOrTablet ? 200 : 290" -->
+        <grid [gap]="[8,8]" [mode]="'flex'" [direction]="'left-center'" [style.width.px]="290">
+          <ui-text [xs]="'tui-text_body-m'" [md]="'tui-text_body-m'" class="f-black-2" style="width: inherit;">
+            <span class="ellipsis">
+              Cargando... {{ file.name }}
+            </span>
+          </ui-text>
+        </grid>
+      </grid>
+    </div>
+  </grid>
+</card>

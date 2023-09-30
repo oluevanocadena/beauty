@@ -1,0 +1,37 @@
+tui-input-number[size="xl"] > tui-primitive-textfield,
+tui-input-password[size="xl"] > tui-primitive-textfield,
+tui-input-phone[size="xl"]>tui-hosted-dropdown>div>tui-primitive-textfield,
+tui-input[size="xl"] > tui-hosted-dropdown > div > tui-primitive-textfield {
+    height: 68px !important;
+    max-height: 68px !important;
+}
+
+tui-input-number[size="xl"] > tui-primitive-textfield > div > div > div > label,
+tui-input-password[size="xl"] > tui-primitive-textfield > div > div > div > label,
+tui-input-phone[size="xl"]>tui-hosted-dropdown>div>tui-primitive-textfield>div>div>div>label,
+tui-input[size="xl"] > tui-hosted-dropdown > div > tui-primitive-textfield > div > div > div > label {
+    font-size: 14px !important;
+    height: 26px !important;
+}
+
+[tuiWrapper][data-appearance='textfield'] {
+    box-shadow: 0 0.025rem 0.1875rem rgba(0, 0, 0, 0.05) !important;
+    background: var(--tui-primary-opaque) !important;
+}
+
+[tuiWrapper]:after{
+  border: 1px solid var(--tui-primary-opaque) !important;
+}
+
+.t-placeholder_raised {
+    font-weight: 600 !important;
+    color: var(--tui-text-01) !important;
+}
+
+.t-icon.t-textfield-icon > tui-svg {
+    font-size: 0.85rem !important;
+}
+
+tui-text-area[data-size="s"] > div > label > div {
+    padding: 0.45rem 0.75rem !important;
+}

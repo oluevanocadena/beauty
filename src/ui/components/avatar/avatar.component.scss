@@ -1,0 +1,53 @@
+@import '@taiga-ui/core/styles/taiga-ui-local.scss';
+
+:host {
+  border-radius: 12px;
+}
+
+img.shadow {
+  box-shadow: rgba(17, 17, 26, 0.05) 0px 1px 0px, rgba(17, 17, 26, 0.1) 0px 0px 8px;
+}
+
+img {
+  border: 1px solid var(--tui-base-02);
+}
+
+.ui-avatar {
+  border-radius: 6px;
+  z-index: 0;
+}
+
+.ui-avatar.selection.selected {
+  border: 2px solid #413ef6;
+}
+
+.content {
+  height: 100%;
+  width: 100%;
+  padding: 0rem;
+  background: var(--tui-base-01);
+  box-sizing: border-box;
+  border-radius: var(--tui-radius-l);
+  overflow: hidden;
+  position: relative;
+}
+
+
+.handlers {
+  background-color: var(--tui-base-02);
+  border-radius: 6px !important;
+  padding: 6px !important;
+
+  z-index: 100;
+  position: absolute;
+  opacity: 0;
+  top: 0.75rem;
+  right: 0.75rem;
+}
+
+:host:hover {
+  .handlers {
+    opacity: 100;
+  }
+
+}

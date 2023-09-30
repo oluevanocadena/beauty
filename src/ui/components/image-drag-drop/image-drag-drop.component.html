@@ -1,0 +1,16 @@
+<div class="content">
+  <tui-loader [overlay]="true" [showLoader]="!!busy" class="h-all w-all">
+    <img (click)="triggerInputFile()" class="ui-image-drag-drop img-cover pointer {{ size }}" [attr.src]="urlImage"
+      (error)="handleErrorImage($event)" />
+    <input #inputFile type="file" [multiple]="false" style="display: none;"
+      accept="image/jpeg, image/jpg, image/webp, image/png" (change)="onFileSelected($event)">
+  </tui-loader>
+
+  <grid [gap]="[8,12]" [mode]="'flex'" [direction]="'right-center'" class="handlers">
+    <span (click)="onDeleteClick()" class="pointer material-symbols-outlined">
+      delete
+    </span>
+    <tui-svg tuiTileHandle src="tuiIconDragLarge" class="move"></tui-svg>
+  </grid>
+
+</div>

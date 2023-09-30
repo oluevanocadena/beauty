@@ -1,0 +1,20 @@
+.ant-segmented {
+  background-color: var(--tui-base-02) !important;
+  color: var(--tui-text-02) !important;
+  border-radius: 6px !important;
+}
+
+
+.ant-segmented-item-selected,
+.ant-segmented-thumb {
+  border-radius: 4px !important;
+  font-weight: 600;
+  background-color: #fff !important;
+  color: var(--tui-primary) !important;
+}
+
+.ant-segmented.ant-segmented-lg .ant-segmented-item-label {
+  padding: 0 1rem !important;
+  font-size: 15px !important;
+  line-height: 48px !important;
+}

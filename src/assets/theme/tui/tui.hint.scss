@@ -1,0 +1,12 @@
+tui-hint {
+  min-height: 2rem !important;
+  padding: 0.55rem 1rem !important;
+  background: #1a1a1a !important;
+  border-radius: 6px !important;
+  color: #e1e1e1 !important;
+  font: var(--tui-font-text-xs) !important;
+}
+
+tui-error {
+  font: var(--tui-font-text-xs) !important;
+}

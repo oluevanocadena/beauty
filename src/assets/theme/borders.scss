@@ -1,0 +1,167 @@
+.rounded {
+    border-radius: 100% !important;
+}
+
+.ghost {
+    border: none !important;
+    background-color: inherit !important;
+}
+
+.ghost:hover {
+    background-color: inherit !important;
+}
+
+.brdr-primary {
+    border: 1px solid var(--tui-primary) !important;
+}
+
+.brdr {
+    border: 1px solid var(--tui-base-03) !important;
+}
+
+.brdr-2 {
+    border: 2px solid var(--tui-base-03) !important;
+}
+
+
+.brdr-dashed {
+    border: 1px dashed var(--tui-base-03) !important;
+}
+
+.brdr-2-dashed {
+    border: 2px dashed var(--tui-base-03) !important;
+}
+
+.brdr-left {
+    border-left: 1px solid var(--tui-base-03) !important;
+}
+
+.brdr-right {
+    border-right: 1px solid var(--tui-base-03) !important;
+}
+
+.brdr-top {
+    border-top: 1px solid var(--tui-base-03) !important;
+}
+
+.brdr-bottom {
+    border-bottom: 1px solid var(--tui-base-03) !important;
+}
+
+.brdr-2-bottom {
+    border-bottom: 2px solid var(--tui-base-03) !important;
+}
+
+
+.brdr-bottom-primary {
+    border-bottom: 1px solid var(--tui-primary) !important;
+}
+
+.brdr-02 {
+    border: 1px solid var(--tui-base-02) !important;
+}
+
+.brdr-left-02 {
+    border-left: 1px solid var(--tui-base-02) !important;
+}
+
+.brdr-right-02 {
+    border-right: 1px solid var(--tui-base-02) !important;
+}
+
+.brdr-top-02 {
+    border-top: 1px solid var(--tui-base-02) !important;
+}
+
+.brdr-2-bottom-02 {
+    border-bottom: 2px solid var(--tui-base-02) !important;
+}
+
+.brdr-bottom-02-black-1 {
+    border-bottom: 2px solid var(--tui-text-01) !important;
+}
+
+.brdr-bottom-02 {
+    border-bottom: 1px solid var(--tui-base-02) !important;
+}
+
+.brdr-bottom-02-primary {
+    border-bottom: 2px solid var(--tui-primary) !important;
+}
+
+.brdr-04 {
+    border: 1px solid var(--tui-base-04) !important;
+}
+
+.brdr-left-04 {
+    border-left: 1px solid var(--tui-base-04) !important;
+}
+
+.brdr-right-04 {
+    border-right: 1px solid var(--tui-base-04) !important;
+}
+
+.brdr-top-04 {
+    border-top: 1px solid var(--tui-base-04) !important;
+}
+
+.brdr-bottom-04 {
+    border-bottom: 1px solid var(--tui-base-04) !important;
+}
+
+.brdr-radius-100-percent {
+    border-radius: 100% !important;
+}
+
+
+$step: 2;
+
+@for $index from 2 through 64 {
+
+    .brdr-radius-#{$step} {
+        border-radius: #{$step}px !important;
+    }
+
+    $step: $step + 2;
+}
+
+
+// Effector
+
+.effector {
+    font-size: 0.9rem;
+    cursor: pointer !important;
+    position: relative; /* Es necesario para que el pseudo-elemento se posicione en relación con este */
+    display: inline-block; /* Para que funcione con elementos en línea */
+    transition: padding 0.3s; /* Suaviza el cambio de padding si lo deseas */
+}
+
+
+.effector.active::before {
+    width: 100%; /* La línea toma todo el ancho */
+    left: 1px; /* La línea se desplaza hacia la izquierda */
+}
+
+
+/* Pseudo-elemento que simulará la línea de borde en la parte inferior */
+.effector::before {
+    content: "";
+    position: absolute;
+    bottom: 0;
+    left: 50%;
+    width: 0;
+    height: 0.125rem;
+    background-color: var(--tui-text-01);
+    transition: width 0.3s, left 0.3s; /* Animación del crecimiento */
+}
+
+/* Efecto hover */
+.effector:hover {
+    color: var(--tui-text-02) !important;
+    // padding-bottom: 0.125rem; /* Ajusta el padding para que se vea el borde */
+}
+
+.effector:hover::before {
+    width: 100%; /* La línea crece a todo lo ancho */
+    left: 1px; /* La línea se desplaza hacia la izquierda */
+}

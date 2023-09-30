@@ -1,0 +1,131 @@
+.none {
+    display: none;
+}
+
+.mirror {
+    transform: scaleX(-1);
+}
+
+
+.relative {
+    position: relative;
+}
+
+.absolute {
+    position: absolute !important;
+}
+
+.img-cover {
+    object-fit: cover;
+    object-position: center;
+}
+
+.img-black-white {
+    filter: grayscale(100%);
+}
+
+.img-scale-down {
+    object-fit: scale-down;
+    object-position: center;
+}
+
+.link {
+    text-decoration: underline !important;
+    color: inherit !important;
+    transition: transform 0.05s;
+}
+
+.link:hover {
+    text-decoration: underline !important;
+    color: inherit !important;
+}
+
+.link:active {
+    transform: scale(0.98);
+}
+
+
+.underline {
+    text-decoration: underline;
+}
+
+.pointer {
+    cursor: pointer;
+}
+
+.cursor-text {
+    cursor: text;
+}
+
+.cursor-move {
+    cursor: move;
+}
+
+.hidden {
+    display: none !important;
+}
+
+
+.center-h {
+    display: block !important;
+    margin: 0 auto;
+}
+
+.center-v {
+    -ms-transform: translateY(-50%);
+    margin: 0;
+    position: absolute;
+    top: 50%;
+    transform: translateY(-50%);
+}
+
+.center-all {
+    margin: 0;
+    position: absolute !important;
+    top: 50%;
+    left: 50%;
+    -ms-transform: translate(-50%, -50%);
+    transform: translate(-50%, -50%);
+}
+
+.center-abs {
+    left: 50%;
+    position: absolute;
+    top: 50%;
+    transform: translate(-50%, -50%);
+}
+
+.center-sticky {
+    position: sticky;
+    top: 50%;
+    transform: translateY(-20%);
+    -ms-transform: translateY(-20%);
+}
+
+
+$step: 0;
+
+@for $index from 0 through 120 {
+
+    .left-#{$step} {
+        left: #{$step}px !important;
+    }
+
+    .right-#{$step} {
+        right: #{$step}px !important;
+    }
+
+    .top-#{$step} {
+        top: #{$step}px !important;
+    }
+
+    .bottom-#{$step} {
+        bottom: #{$step}px !important;
+    }
+
+    $step: $step + 1;
+}
+
+.bottom-safe {
+    bottom: env(safe-area-inset-bottom) !important;
+}

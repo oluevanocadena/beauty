@@ -1,0 +1,16 @@
+@import '@taiga-ui/core/styles/taiga-ui-local.scss';
+
+:host {
+  width: 100%;
+}
+
+.menu-item {
+  font-size: 0.94rem;
+  font-weight: 600;
+  cursor: pointer;
+  color: var(--tui-base-08);
+}
+
+.menu-item>.material-symbols-outlined {
+  font-size: 1.70rem;
+}

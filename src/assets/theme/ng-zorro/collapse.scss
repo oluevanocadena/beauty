@@ -1,0 +1,26 @@
+.ant-collapse-item:last-child>.ant-collapse-content,
+.ant-collapse>.ant-collapse-item:last-child,
+.ant-collapse>.ant-collapse-item:last-child>.ant-collapse-header {
+  border-radius: 0 0 6px 6px !important;
+}
+
+.ant-collapse>.ant-collapse-item {
+  border-bottom: 1px solid var(--tui-base-03) !important;
+}
+
+.ant-collapse {
+  border-radius: 6px !important;
+  border-color: var(--tui-base-03) !important;
+}
+
+.ant-collapse-content {
+  border-top: 1px solid var(--tui-base-03) !important;
+}
+
+.ant-collapse>.ant-collapse-item>.ant-collapse-header {
+  padding: 8px 16px !important;
+}
+
+.ant-collapse-content {
+  background-color: rgba(var(--tui-base-02), 0.9) !important;
+}

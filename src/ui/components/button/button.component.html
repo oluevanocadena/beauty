@@ -1,0 +1,11 @@
+<button tuiButton [attr.dark]="darkMode ? true : null" [size]="size" [appearance]="appearance" [shape]="shape"
+  [attr.tuiIconButton]="icon && !label ? true : null" type="button" [ngStyle]="{ 'height': height, 'width': width }">
+  <grid [gap]="[8,8]" [mode]="'flex'" [padding]="icon && label ? '0 0.35rem 0 0' : '0'" [direction]="'left-center'">
+    <span *ngIf="!!icon" [class]="'material-symbols-outlined '+ iconColorClass" [ngStyle]="{ 'font-size': iconSize }">
+      {{ icon }}
+    </span>
+    <span *ngIf="label" [class]="'f-lato fw-600 ' + textColorClass" [ngStyle]="{ 'font-size': textSize }">
+      {{ label }}
+    </span>
+  </grid>
+</button>

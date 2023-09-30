@@ -1,0 +1,13 @@
+tui-select[ghost] > tui-hosted-dropdown > div > tui-primitive-textfield > div[tuiWrapper][data-appearance=textfield],
+tui-select[ghost] > tui-hosted-dropdown > div > tui-primitive-textfield > div[tuiWrapper][data-appearance=textfield] > input {
+    border: none !important;
+    box-shadow: none !important;
+    background: transparent !important;
+}
+
+tui-select[ghost] > tui-hosted-dropdown > div > tui-primitive-textfield > div[tuiWrapper][data-appearance=textfield]::after {
+    border: none !important;
+    border-width: 0 !important;
+    box-shadow: none !important;
+}
+

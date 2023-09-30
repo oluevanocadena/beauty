@@ -1,0 +1,10 @@
+<grid [gap]="[4,0]" [padding]="'0 0.4rem 0 0.1rem'" [mode]="'flex'" [direction]="'left-center'" [height]="'fit-content'"
+  class="brdr-radius-6"
+  [ngClass]="{ 'bg-error-fill f-01': percentVariation < 0, 'bg-success-fill': percentVariation > 0, 'bg-03 f-black-3': percentVariation === 0   }">
+  <span class="material-symbols-outlined f-20 f-lh-24">
+    {{ percentVariation > 0 ? 'expand_less' : 'expand_more' }}
+  </span>
+  <span class="f-15 fw-600 lh-10 f-lh-26">
+    {{ percentVariation | numeralFormat: '0.0%' }}
+  </span>
+</grid>

@@ -1,0 +1,18 @@
+<div class="content">
+  <tui-loader [overlay]="true" [showLoader]="!!uploading" class="h-all w-all">
+    <img (click)="readonly ? undefined : triggerInputFile()" class="ui-avatar img-cover pointer"
+      [ngStyle]="{'width': width, 'height': height}"
+      [ngClass]="{ 'selected' : selected , 'selection' : mode === 'selection', pointer: disabled === false, 'shadow': shadow }"
+      [attr.src]="urlImage" (error)="handleErrorImage($event)" />
+    <input #inputFile type="file" [multiple]="false" style="display: none;"
+      accept="image/jpeg, image/jpg, image/webp, image/png" (change)="onFileSelected($event)">
+  </tui-loader>
+
+  <grid *ngIf="urlImage && readonly === false" [gap]="[8,12]" [mode]="'flex'" [direction]="'right-center'"
+    class="handlers">
+    <span (click)="onDeleteClick()" class="pointer material-symbols-outlined">
+      delete
+    </span>
+  </grid>
+
+</div>

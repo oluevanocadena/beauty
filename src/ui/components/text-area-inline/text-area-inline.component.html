@@ -1,0 +1,4 @@
+<grid [gap]="[8,8]" [mode]="'flex'" [direction]="'left-center'">
+  <textarea [attr.placeholder]="placeholder" (keydown.enter)="enter($event)" [(ngModel)]="value"
+    (ngModelChange)="updateValue($event)" class="custom-textarea"></textarea>
+</grid>

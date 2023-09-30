@@ -1,0 +1,60 @@
+@import '@taiga-ui/core/styles/taiga-ui-local.scss';
+
+.bg-white-cricle {
+  background-color: #FFF;
+  padding: 0.40rem !important;
+  box-shadow: rgba(0, 0, 0, 0.05) 0px 1px 2px, rgba(0, 0, 0, 0.05) 0px 2px 4px, rgba(0, 0, 0, 0.05) 0px 4px 8px, rgba(0, 0, 0, 0.05) 0px 8px 16px, rgba(0, 0, 0, 0.05) 0px 16px 32px, rgba(0, 0, 0, 0.05) 0px 32px 64px;
+  border-radius: 32px !important;
+}
+
+
+.sk-bc-grad-green {
+  background: linear-gradient(to right, #eefef4, white);
+}
+
+.sk-bc-grad-red {
+  background: linear-gradient(to right, #fef4f3, white);
+}
+
+.sk-bc-grad-orange {
+  background: linear-gradient(to right, #fef7f0, white);
+}
+
+.sk-bc-grad-blue {
+  background: linear-gradient(to right, #f0f7fe, white);
+}
+
+
+
+.sk-bc-green {
+  background-color: #20a779;
+}
+
+.sk-bc-red {
+  background-color: #ff355c;
+}
+
+.sk-bc-orange {
+  background-color: #f0a92e;
+}
+
+.sk-bc-blue {
+  background-color: #007bc2;
+}
+
+
+.sk-fc-green {
+  color: #20a779;
+}
+
+.sk-fc-red {
+  color: #ff355c;
+}
+
+.sk-fc-orange {
+  color: #f0a92e;
+}
+
+.sk-fc-blue {
+  color: #007bc2;
+}

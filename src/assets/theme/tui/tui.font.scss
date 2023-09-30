@@ -1,0 +1,19 @@
+* {
+
+    // --tui-text-font: 'Lato', -apple-system, 'BlinkMacSystemFont', system-ui, 'Roboto', 'Segoe UI', 'Helvetica Neue', sans-serif !important;
+    // --tui-heading-font: 'Lato', -apple-system, 'BlinkMacSystemFont', system-ui, 'Roboto', 'Segoe UI', 'Helvetica Neue', sans-serif !important;
+    --tui-font-heading-3: bold 2.0rem / 2.5rem var(--tui-font-heading);
+    a,
+    span,
+    ui-text {
+        text-rendering: geometricPrecision;
+    }
+}
+
+tui-notification > tui-svg {
+    font-size: 1.25rem !important;
+}
+
+tui-notification > .t-content > .t-heading {
+    font-size: 1.125rem !important;
+}

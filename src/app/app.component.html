@@ -1,0 +1,125 @@
+<tui-root>
+  <grid [gap]="[0,16]">
+    <grid [gap]="[16,16]" [padding]="'0.5rem 1rem'" class="top-bar">
+      <grid [gap]="[16,16]" [templateColumn]="'1fr max-content'">
+        <grid [gap]="[8,8]" [mode]="'flex'" [direction]="'left-center'">
+          <span class="logo-text f-28 f-primary">
+            Beauty
+          </span>
+          <span class="fw-100 f-24 f-black-2">
+            HAIR
+          </span>
+        </grid>
+        <button tuiButton tuiIconButton type="button" [appearance]="'flat'">
+          <span class="material-symbols-outlined f-primary">
+            menu
+          </span>
+        </button>
+      </grid>
+    </grid>
+
+    <form [formGroup]="formGroup" class="banner">
+      <grid [gap]="[16,16]" [xs]="'1fr'" [md]="'1.5fr 1fr'" [height]="isMobileOrTablet ? 'auto': '470px' " [padding]="'0 2rem'"
+        [maxWidth]="'1028px'" style="margin: 0 auto;">
+        <grid *ngIf="isMobileOrTablet === false" [gap]="[16,16]" [height]="'470px'">
+          &nbsp;
+        </grid>
+
+        <grid [gap]="[8,8]" [mode]="'flex'" [direction]="'right-center'" [height]="'470px'">
+
+          <grid [gap]="[16,16]" [width]="'100%'">
+            <grid [gap]="[8,16]">
+              <span class="fw-600 f-black-1 f-16">Correo:</span>
+              <tui-input-date formControlName="Date" tuiTextfieldSize="l" [tuiTextfieldCleaner]="true" class="w-all">
+                Fecha
+              </tui-input-date>
+            </grid>
+            <grid [gap]="[8,16]">
+              <span class="fw-600 f-black-1 f-16">Teléfono:</span>
+              <tui-input-phone class="b-form" formControlName="Phone" tuiTextfieldSize="l"
+                [tuiTextfieldLabelOutside]="true" [countryCode]="'+52'" [tuiTextfieldCleaner]="true" class="w-all">
+                Teléfono
+              </tui-input-phone>
+            </grid>
+            <grid [gap]="[8,16]">
+              <span class="fw-600 f-black-1 f-16">Correo electrónico:</span>
+              <tui-input formControlName="Email" tuiTextfieldSize="l" [tuiTextfieldCleaner]="true"
+                [tuiTextfieldLabelOutside]="true" class="w-all">
+                Ingresa un correo
+                <span class="tui-required"></span>
+                <input autocomplete="email" placeholder="mail@mail.com" tuiTextfield type="email" />
+              </tui-input>
+            </grid>
+
+            <grid [gap]="[8,8]" [mode]="'flex'" [direction]="'right-center'">
+              <button (click)="onSend()" [disabled]="canSend === false" appearance="opposite" tuiButton
+                [shape]="'rounded'" [size]="'m'">
+                <span>
+                  &nbsp;&nbsp;Enviar Datos&nbsp;&nbsp;
+                </span>
+              </button>
+            </grid>
+          </grid>
+        </grid>
+      </grid>
+    </form>
+
+    <grid [gap]="[8,8]" [padding]="'4rem 1rem'" [width]="'100%'" [mode]="'flex'" [direction]="'center-center'">
+      <grid [gap]="[16,16]" [width]="'100%'" [maxWidth]="'1028px'">
+        <tui-tabs-with-more [(activeItemIndex)]="activeItemIndex">
+          <button *tuiItem tuiTab>
+            ESTOY ACTIVA
+          </button>
+          <button *tuiItem tuiTab>
+            NO ESTOY ACTIVA
+          </button>
+          <button *tuiItem tuiTab [disabled]="true">
+            ESTOY DESHABILITADA
+          </button>
+        </tui-tabs-with-more>
+
+        <grid *ngIf="activeItemIndex === 0" [gap]="[16,16]">
+          <grid [gap]="[8,8]" [mode]="'flex'" [direction]="'center-center'">
+            <span class="t-center f-18 f-primary">
+              Soy la tabla de la pestaña 1
+            </span>
+          </grid>
+          <table class="tui-table">
+            <tbody>
+              <tr class="tui-table__tr tui-table__tr_border_none">
+                <th class="tui-table__th fw-600">Zona</th>
+                <th class="tui-table__th fw-600">Dirección</th>
+              </tr>
+              <tr *ngFor="let item of items" class="tui-table__tr tui-table__tr_border_none">
+                <td class="tui-table__td">{{item.ZoneType}}/td>
+                <td class="tui-table__td">{{getFormattedAddress(item)}}</td>
+              </tr>
+              <tr *ngIf="items?.length === 0">
+                <td colspan="4" class="tui-table__td tui-table__td_last t-center">
+                  No hay datos por msotrar
+                </td>
+              </tr>
+            </tbody>
+          </table>
+
+        </grid>
+
+      </grid>
+    </grid>
+
+    <grid [gap]="[16,16]" [padding]="'1rem 2rem'" [xs]="'1fr'" [md]="'1fr 1fr'">
+      <span class="f-black-1">
+        Todos los derechos reservados 2023 ©
+      </span>
+      <grid [gap]="[8,8]" [mode]="'flex'" [direction]="'right-center'">
+        <span>
+          Beauty Hair 2023
+        </span>
+      </grid>
+    </grid>
+  </grid>
+
+</tui-root>
+
+<confirm-modal [title]="'Confirmación'" [message]="'¿Está seguro que desea enviar estos datos de cita?'"
+  [(show)]="visibleSendModal" (onConfirm)="onConfirmSend()"></confirm-modal>

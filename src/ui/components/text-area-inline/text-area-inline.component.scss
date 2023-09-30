@@ -1,0 +1,14 @@
+.custom-textarea {
+    border: none;
+    overflow: hidden;
+    resize: none;
+    line-height: 1.5;
+    max-height: 3.2em;
+    width: 100%;
+    overflow-y: auto;
+    padding: 0.75em 0.75em 0.25rem;
+}
+
+.custom-textarea:hover {
+    background-color: var(--tui-base-02);
+}

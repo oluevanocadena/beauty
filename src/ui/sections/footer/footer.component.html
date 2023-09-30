@@ -1,0 +1,29 @@
+<grid [padding]="'0.85rem'" class="brdr-top">
+  <grid [gap]="[16,32]" [width]="'100%'" [padding]="'0 2rem'" [xs]="'1fr'" [md]="'1fr max-content'"
+    [lg]="'1fr max-content'" [class]="{ 'tui-container tui-container_adaptive' : responsive === false }">
+    <grid [gap]="[0,16]" [mode]="'flex'" [direction]="'left-center'" [wrap]="true">
+      <span class="f-13 f-black-2 fw-300'">
+        © 2023 Rummio México S.A. de C.V. - Todos los derechos reservados
+      </span>
+      <a *ngIf="responsive ? isMobile ? false : true : true" class="f-13 f-black-2 fw-300 effector pdd-bottom-9'">
+        Privacidad
+      </a>
+      <a *ngIf="responsive ? isMobile ? false : true : true" class="f-13 f-black-2 fw-300 effector pdd-bottom-9'">
+        Términos
+      </a>
+      <a *ngIf="responsive ? isMobile ? false : true : true" class="f-13 f-black-2 fw-300 effector pdd-bottom-9'">
+        ¿Quienes somos?
+      </a>
+    </grid>
+
+    <grid *ngIf="responsive ? isMobile ? false : true : true" [gap]="[8,16]" [mode]="'flex'"
+      [direction]="'right-center'">
+      <span class="icon-facebook2 f-16 f-black-1 pointer">
+      </span>
+      <span class="icon-instagram f-16 f-black-1 pointer">
+      </span>
+      <span class="icon-youtube f-20 f-black-1 pointer">
+      </span>
+    </grid>
+  </grid>
+</grid>

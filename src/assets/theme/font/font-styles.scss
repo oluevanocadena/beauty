@@ -1,0 +1,52 @@
+.ellipsis {
+  white-space: nowrap;
+  overflow: hidden;
+  text-overflow: ellipsis;
+  display: inline-block;
+  // width: calc(80%);
+}
+
+.uppercase {
+  text-transform: uppercase;
+}
+
+.lowercase {
+  text-transform: lowercase;
+}
+
+.lttr-spc-neg-1 {
+  letter-spacing: -0.045rem;
+}
+
+.lttr-spc-neg-2 {
+  letter-spacing: -0.060rem;
+}
+
+
+.lttr-spc-1 {
+  letter-spacing: 0.001rem;
+}
+
+.lttr-spc-2 {
+  letter-spacing: 0.002rem;
+}
+
+.lttr-spc-3 {
+  letter-spacing: 0.03rem;
+}
+
+.lttr-spc-4 {
+  letter-spacing: 0.04rem;
+}
+
+.through {
+  text-decoration: line-through;
+}
+
+.break-word {
+  word-break: break-word;
+}
+
+.wrap {
+  text-wrap: wrap;
+}

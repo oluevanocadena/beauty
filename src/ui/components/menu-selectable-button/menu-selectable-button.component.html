@@ -1,0 +1,9 @@
+<grid class="menu-selectable-button pointer" [ngClass]="{ 'selected' : selected }" [gap]="[8,16]" [mode]="'flex'"
+  [direction]="'left-center'" [padding]="'1rem 2.5rem'" [rounded]="4" (click)="navigate()">
+  <span *ngIf="icon" class="material-symbols-outlined">
+    {{ icon }}
+  </span>
+  <ui-text class="f-16 fw-600">
+    {{ text }}
+  </ui-text>
+</grid>

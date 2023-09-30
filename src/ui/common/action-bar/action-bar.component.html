@@ -1,0 +1,28 @@
+<tui-loader [overlay]="true" [showLoader]="busy" class="w-full">
+  <grid [gap]="[16,24]" [padding]="'1rem 1.5rem'" [xs]="'1fr'" [md]="'1fr max-content'" [lg]="'1fr max-content'">
+    <grid [gap]="[8,8]" [mode]="'flex'" [direction]="'left-center'"
+      [padding]="isMobileOrTablet ? '1rem 0rem' : '1rem 0.5rem'">
+      <button-close [tabIndex]="-1" (click)="validateBackAction()"></button-close>
+    </grid>
+    <grid [gap]="[8,8]" [mode]="'flex'" [direction]="isMobileOrTablet ? 'left-center': 'right-center'">
+
+      <dropdown-actions *ngIf="Actions?.length > 0" [actions]="Actions"></dropdown-actions>
+
+      <button *ngIf="showSave" (click)="save()" tuiButton type="button" [size]="'l'" appearance="primary"
+        [disabled]="canSave === false && canBack === true">
+        {{ saveText }}
+      </button>
+    </grid>
+  </grid>
+</tui-loader>
+
+
+<confirm-modal [(show)]="showDelete" [title]="'Eliminar ' + this.itemName"
+  [message]="'¿Está seguro que desea <b>eliminar '+ pronoun + ' '+ itemName +'</b>? Esta acción no se pude deshacer'"
+  [confirmText]="'Eliminar ' + this.itemName" (onConfirm)="confirmDelete()">
+</confirm-modal>
+
+<confirm-modal [(show)]="showConfirm" [title]="'Cambios no guardados'"
+  [message]="'¿Está seguro que desea <b>descartar</b> los cambios no guardados?'" [confirmText]="'Descartar cambios'"
+  (onConfirm)="onConfirmCancel()">
+</confirm-modal>

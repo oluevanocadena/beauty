@@ -1,0 +1,89 @@
+.ant-menu-inline>.ant-menu-item,
+.ant-menu-inline>.ant-menu-submenu>.ant-menu-submenu-title,
+.ant-menu-vertical-left>.ant-menu-item,
+.ant-menu-vertical-left>.ant-menu-submenu>.ant-menu-submenu-title,
+.ant-menu-vertical-right>.ant-menu-item,
+.ant-menu-vertical-right>.ant-menu-submenu>.ant-menu-submenu-title,
+.ant-menu-vertical>.ant-menu-item,
+.ant-menu-vertical>.ant-menu-submenu>.ant-menu-submenu-title {
+  height: fit-content !important;
+  line-height: normal !important;
+}
+
+.ant-menu-inline,
+.ant-menu-vertical,
+.ant-menu-vertical-left {
+  border-right: none !important;
+}
+
+.ant-menu-inline .ant-menu-item-group-list .ant-menu-submenu-title,
+.ant-menu-inline .ant-menu-submenu-title,
+.ant-menu-vertical .ant-menu-item-group-list .ant-menu-submenu-title,
+.ant-menu-vertical .ant-menu-submenu-title {
+  padding-right: 1rem !important;
+  padding-left: 0 !important;
+}
+
+.ant-menu-submenu-arrow,
+.ant-menu-submenu-expand-icon {
+  display: none !important;
+}
+
+.ant-menu-item .ant-menu-item-icon,
+.ant-menu-item .anticon,
+.ant-menu-submenu-title .ant-menu-item-icon,
+.ant-menu-submenu-title .anticon {
+  display: none !important;
+}
+
+.ant-menu-light .ant-menu-item-active,
+.ant-menu-light .ant-menu-item:hover,
+.ant-menu-light .ant-menu-submenu-active,
+.ant-menu-light .ant-menu-submenu-title:hover,
+.ant-menu-light .ant-menu:not(.ant-menu-inline) .ant-menu-submenu-open {
+  color: #fff !important;
+}
+
+.ant-menu-inline .ant-menu-item,
+.ant-menu-inline .ant-menu-submenu-title,
+.ant-menu-vertical .ant-menu-item,
+.ant-menu-vertical .ant-menu-submenu-title,
+.ant-menu-vertical-left .ant-menu-item,
+.ant-menu-vertical-left .ant-menu-submenu-title,
+.ant-menu-vertical-right .ant-menu-item,
+.ant-menu-vertical-right .ant-menu-submenu-title {
+  height: fit-content !important;
+  margin-top: 4px !important;
+  margin-bottom: 4px !important;
+  padding: 0 0.25rem !important;
+}
+
+.ant-menu-submenu>.ant-menu {
+  background-color: var(--tui-base-02) !important;
+  border-radius: 6px !important;
+}
+
+.ant-menu-submenu.ant-menu-submenu-placement-right {
+  left: 0.9rem !important;
+}
+
+.ant-menu-item:active,
+.ant-menu-submenu-title:active,
+.ant-picker-time-panel-column>li.ant-picker-time-panel-cell-selected .ant-picker-time-panel-cell-inner {
+  background: #ffffff !important;
+}
+
+.ant-menu-item .ant-menu-item-icon+span,
+.ant-menu-item .anticon+span,
+.ant-menu-submenu-title .ant-menu-item-icon+span,
+.ant-menu-submenu-title .anticon+span {
+  display: none !important;
+}
+
+.ant-menu-submenu-popup {
+  border-radius: 6px !important;
+}
+
+.ant-menu {
+  background: var(--tui-base-04) !important;
+}

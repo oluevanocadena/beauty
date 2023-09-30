@@ -1,0 +1,9 @@
+<grid [gap]="[16,16]">
+  <ui-text *ngIf="title" [xs]="xsTitleSize" [md]="mdTitleSize" class="f-black-1"
+    [ngClass]="{'fw-600': bold,'fw-300': bold === false}">
+    {{ title }}
+  </ui-text>
+  <span *ngIf="subtitle" [contentRenderer]="subtitle" class="f-12 f-black-2">
+
+  </span>
+</grid>

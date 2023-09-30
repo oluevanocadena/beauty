@@ -1,0 +1,12 @@
+.menu-selectable-button {
+  color: var(--tui-base-08);
+}
+
+.menu-selectable-button.selected {
+  background-color: var(--tui-secondary);
+  color: var(--tui-primary);
+}
+
+.menu-selectable-button:hover {
+  color: var(--tui-primary);
+}

@@ -1,0 +1,22 @@
+$step: 1;
+
+@for $index from 1 through 124 {
+
+    .pdd-left-#{$step} {
+        padding-left: #{$step}px !important;
+    }
+
+    .pdd-right-#{$step} {
+        padding-right: #{$step}px !important;
+    }
+
+    .pdd-top-#{$step} {
+        padding-top: #{$step}px !important;
+    }
+
+    .pdd-bottom-#{$step} {
+        padding-bottom: #{$step}px !important;
+    }
+
+    $step: $step + 1;
+}

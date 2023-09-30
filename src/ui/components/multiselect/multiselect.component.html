@@ -1,0 +1,7 @@
+<tui-multi-select [editable]="false" [stringify]="stringify" [identityMatcher]="identityMatcher"
+  [tuiTextfieldCleaner]="true" [(ngModel)]="value" (ngModelChange)="onInnerComponentValueChange($event)"
+  [attr.disabled]="disabled">
+  {{ label }}
+  <tui-data-list-wrapper *tuiDataList tuiMultiSelectGroup [items]="options"
+    [itemContent]="stringify"></tui-data-list-wrapper>
+</tui-multi-select>

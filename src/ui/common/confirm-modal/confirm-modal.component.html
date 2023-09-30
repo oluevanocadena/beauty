@@ -1,0 +1,29 @@
+<nz-modal [(nzVisible)]="show" [nzTitle]="modalTitle" [nzContent]="modalContent" [nzFooter]="modalFooter"
+  [nzWidth]="500" [nzCentered]="true" [nzClosable]="false" (nzOnCancel)="handleCancel()">
+
+  <ng-template #modalTitle>
+    <ui-modal-title-bar [title]="title" (onClose)="handleCancel()"></ui-modal-title-bar>
+  </ng-template>
+
+  <ng-template #modalContent>
+    <grid [gap]="[16,16]" [padding]="'0.25rem'">
+      <div [innerHTML]="isString(message) ? message : ''" class="f-black-1 f-14">
+      </div>
+    </grid>
+  </ng-template>
+
+  <ng-template #modalFooter>
+    <grid [gap]="[16,16]" [xs]="'1fr 1fr'" [md]="'1fr 1fr'" [lg]="'1fr 1fr'" [padding]="'0.5rem 0.75rem'">
+      <grid [gap]="[8,8]" [mode]="'flex'" [direction]="'left-center'">
+        <a (click)="handleCancel()" class="effector active fw-600 f-16 f-black-1">
+          Cancelar
+        </a>
+      </grid>
+      <grid [gap]="[8,8]" [mode]="'flex'" [direction]="'right-center'">
+        <button (click)="confirm()" tuiButton type="button" [size]="'m'" appearance="primary" class="w-content">
+          &nbsp;{{ confirmText }}&nbsp;
+        </button>
+      </grid>
+    </grid>
+  </ng-template>
+</nz-modal>

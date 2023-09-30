@@ -1,0 +1,26 @@
+<grid [gap]="[16,8]" [templateColumn]="'1fr 1fr 1fr'">
+  <grid [mode]="'flex'" [direction]="'left-center'">
+    <button (click)="decrement()" [autofocus]="false" [tabIndex]="-1" tuiButton tuiIconButton
+      appearance="{{appearance}}" [type]="'button'" [size]="size" [shape]="'rounded'" [disabled]="quantity===0">
+      <span class="material-symbols-outlined fw-300 f-20">
+        remove
+      </span>
+    </button>
+
+  </grid>
+  <grid [mode]="'flex'" [direction]="'center-center'">
+    <span class="f-16">
+      {{ quantity }}
+    </span>
+  </grid>
+
+  <grid [mode]="'flex'" [direction]="'right-center'">
+    <button (click)="increment()" [autofocus]="false" [tabIndex]="-1" tuiButton tuiIconButton
+      appearance="{{appearance}}" [type]="'button'" [size]="size" [shape]="'rounded'">
+      <span class="material-symbols-outlined fw-300 f-20">
+        add
+      </span>
+    </button>
+  </grid>
+
+</grid>

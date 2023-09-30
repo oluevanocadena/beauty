@@ -1,0 +1,29 @@
+<button tuiButton nz-dropdown [nzDropdownMenu]="dropdown" [(nzVisible)]="openDropdown" type="button"
+  appearance="outline">
+  <grid [gap]="[8,8]" [mode]="'flex'" [direction]="'left-center'">
+    Acciones
+    <span class="material-symbols-outlined" [ngClass]="{'rotate': openDropdown } ">
+      expand_more
+    </span>
+  </grid>
+</button>
+
+<nz-dropdown-menu #dropdown>
+  <card [radius]="6" [shadow]="true">
+    <grid [gap]="[16,16]" [padding]="'0.5rem 1rem 1rem'">
+      <grid role="menu" style="min-width: 200px;">
+        <ui-text class="tui-text_body-s f-black-2" [padding]="'0.5rem 0'">
+          Acciones
+        </ui-text>
+        <grid [gap]="[8,16]">
+          <grid *ngIf="actions" [gap]="[16,16]">
+            <button *ngFor="let action of actions" (click)="action.Method(action.Params)" tuiButton type="button"
+              [size]="'l'" [appearance]="action.Appearance" class="button-left">
+              {{ action.Name }}
+            </button>
+          </grid>
+        </grid>
+      </grid>
+    </grid>
+  </card>
+</nz-dropdown-menu>

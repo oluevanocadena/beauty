@@ -1,0 +1,37 @@
+$step: 1;
+
+@for $index from 1 through 124 {
+
+  .f-#{$step} {
+    font-size: #{$step}px !important;
+  }
+
+  $step: $step+1;
+}
+
+$step: 1;
+
+@for $index from 1 through 124 {
+
+  .f-lh-#{$step} {
+    line-height: #{$step}px !important;
+  }
+
+  $step: $step+1;
+}
+
+.f-xs {
+  font: var(--tui-font-text-xs) !important;
+}
+
+.f-s {
+  font: var(--tui-font-text-s) !important;
+}
+
+.f-m {
+  font: var(--tui-font-text-m) !important;
+}
+
+.f-l {
+  font: var(--tui-font-text-l) !important;
+}

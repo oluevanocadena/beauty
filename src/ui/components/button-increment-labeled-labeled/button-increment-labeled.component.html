@@ -1,0 +1,14 @@
+<grid [gap]="[16,16]" [padding]="'0rem'" [templateColumn]="'1fr max-content'" [width]="'100%'">
+  <grid [mode]="'flex'" [direction]="'left-center'">
+    <grid [gap]="[4,16]">
+      <span *ngIf="title" class="{{'f-'+titleSize}} f-black-1 fw-600" [contentRenderer]="title">
+      </span>
+      <span *ngIf="subtitle" class="{{ 'f-'+ subtitleSize }} f-lato f-black-2 fw-400" [contentRenderer]="subtitle">
+      </span>
+    </grid>
+  </grid>
+  <grid [mode]="'flex'" [direction]="'right-center'">
+    <ui-button-increment [(ngModel)]="quantity" [min]="min" [max]="max" [size]="size" [appearance]="appearance"
+      (ngModelChange)="onChangeButtonIncrementValue()"></ui-button-increment>
+  </grid>
+</grid>

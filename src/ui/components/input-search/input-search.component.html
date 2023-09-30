@@ -1,0 +1,6 @@
+<tui-input tuiTextfieldIconLeft="tuiIconSearchLarge" #searchInput [(ngModel)]="value"
+  (ngModelChange)="onInnerComponentValueChange($event)" [attr.disabled]="disabled" [tuiTextfieldCleaner]="true"
+  (input)="handleInput(searchInput)" [tuiTextfieldSize]="size">
+  {{ label }}
+  <input tuiTextfield [attr.placeholder]="placeholder" type="text" />
+</tui-input>

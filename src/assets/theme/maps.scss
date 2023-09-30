@@ -1,0 +1,32 @@
+div.gmnoprint > div {
+    border-radius: 8px !important;
+}
+
+.gmnoprint > button {
+    border-radius: 8px !important;
+    bottom: 16px !important;
+    box-shadow: rgba(50, 50, 93, 0.25) 0 13px 27px -5px, rgba(0, 0, 0, 0.3) 0 8px 16px -8px !important;
+}
+
+.gm-style-iw {
+    padding: 1rem 1rem 0.25rem !important;
+    max-width: 400px !important;
+}
+
+.gm-style-iw > button {
+    top: 4px !important;
+    right: 4px !important;
+}
+
+.gm-style-iw > div > div {
+    font-size: 15px;
+    color: var(--tui-text-01);
+    text-align: center !important;
+    box-shadow: rgba(50, 50, 93, 0.25) 0 13px 27px -5px, rgba(0, 0, 0, 0.3) 0 8px 16px -8px !important;
+}
+
+@media(max-width: 768px) {
+    .gm-style-iw {
+        max-width: 300px !important;
+    }
+}

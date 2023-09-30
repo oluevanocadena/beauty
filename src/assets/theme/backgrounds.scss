@@ -1,0 +1,103 @@
+.bg-black {
+    background-color: #000 !important;
+}
+
+.bg-black-1-alpha {
+  background-color: rgba(#000, 0.5) !important;
+}
+
+.bg-01-alpha {
+    background-color: rgba(#fff, 0.75) !important;
+}
+
+.bg-01 {
+    background-color: var(--tui-base-01) !important;
+}
+
+.bg-02 {
+    background-color: var(--tui-base-02) !important;
+}
+
+.bg-03 {
+    background-color: var(--tui-base-03) !important;
+}
+
+.bg-04 {
+    background-color: var(--tui-base-04) !important;
+}
+
+.bg-05 {
+    background-color: var(--tui-base-05) !important;
+}
+
+.bg-06 {
+    background-color: var(--tui-base-06) !important;
+}
+
+.bg-07 {
+    background-color: var(--tui-base-07) !important;
+}
+
+.bg-hoverable-02:hover {
+    background-color: var(--tui-base-02) !important;
+    cursor: pointer;
+}
+
+.bg-hoverable-03:hover {
+    background-color: var(--tui-base-03) !important;
+    cursor: pointer;
+}
+
+
+.bg-primary {
+    background-color: var(--tui-primary);
+}
+
+.bg-positive {
+    background-color: var(--tui-positive);
+}
+
+.bg-success {
+    background-color: var(--tui-success-bg);
+}
+
+.bg-success-fill {
+    background-color: var(--tui-success-fill);
+}
+
+.bg-error {
+    background-color: var(--tui-error-bg);
+}
+
+.bg-error-fill {
+    background-color: var(--tui-error-fill);
+}
+
+.bg-negative {
+    background-color: var(--tui-negative);
+}
+
+.bg-negative-light {
+    background-color: var(--tui-accent-active);
+}
+
+.bg-warning {
+    background-color: var(--tui-warning-fill);
+}
+
+.bg-information {
+    background-color: var(--tui-info-fill);
+}
+
+.bg-support{
+  background-color: var(--tui-support-5)!important;
+}
+
+@for $i from 1 through 20 {
+    .support-#{$i} {
+        background-color: var(--tui-support-#{$i}, var(--tui-support-0#{$i}));
+    }
+    .f-support-#{$i} {
+        color: var(--tui-support-#{$i}, var(--tui-support-0#{$i}));
+    }
+}

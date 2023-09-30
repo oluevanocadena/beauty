@@ -1,0 +1,80 @@
+@import '@taiga-ui/core/styles/taiga-ui-local.scss';
+
+.f-black-1 {
+    color: var(--tui-text-01) !important;
+}
+
+.f-black-2 {
+    color: var(--tui-text-02) !important;
+}
+
+.f-black-3 {
+    color: var(--tui-text-03) !important;
+}
+
+.f-primary-hoverable:hover {
+    color: var(--tui-primary) !important;
+}
+
+.f-primary,
+.icon.primary {
+    color: var(--tui-primary);
+}
+
+.f-positive,
+.icon.positive {
+    color: var(--tui-positive);
+}
+
+.f-success,
+.icon.success {
+    color: var(--tui-success-fill);
+}
+
+.f-error,
+.icon.error {
+    color: var(--tui-error-fill);
+}
+
+
+.f-negative,
+.icon.negative {
+    color: var(--tui-negative);
+}
+
+.f-negative-light,
+.icon.negative-light {
+    color: var(--tui-accent-active);
+}
+
+.f-warning,
+.icon.warning {
+    color: var(--tui-warning-fill);
+}
+
+.f-information,
+.icon.information {
+    color: var(--tui-info-fill);
+}
+
+.f-link,
+.icon.link {
+    color: var(--tui-link) !important;
+}
+
+
+.f-01 {
+    color: var(--tui-base-01) !important;
+}
+
+
+$step: 1;
+
+@for $index from 1 through 20 {
+
+    .tui-support-#{$step} {
+        background-color: var(--tui-support-#{$step}, var(--tui-support-0#{$step})) !important;
+    }
+
+    $step: $step + 1;
+}

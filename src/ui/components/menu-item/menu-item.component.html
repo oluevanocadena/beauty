@@ -1,0 +1,15 @@
+<grid class="menu-item" [gap]="[16,16]" [xs]="'1fr'" [md]="'1fr max-content'" [lg]="'1fr max-content'">
+  <grid [gap]="[8,16]" [mode]="'flex'" [direction]="'left-center'" (click)="navigate()">
+    <span *ngIf="icon" class="material-symbols-outlined f-26">
+      {{ icon }}
+    </span>
+    <ui-text class="t-left f-lh-18">
+      {{ text }}
+    </ui-text>
+  </grid>
+  <grid *ngIf="submenu" [gap]="[16,16]">
+    <span class="material-symbols-outlined f-black-3 f-16 f-lh-24">
+      arrow_forward_ios
+    </span>
+  </grid>
+</grid>

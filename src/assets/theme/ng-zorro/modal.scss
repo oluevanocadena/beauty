@@ -1,0 +1,35 @@
+.ant-modal-header {
+  border-radius: 6px 6px 0 0 !important;
+}
+
+.ant-modal-content {
+  border-radius: 6px !important;
+}
+
+
+.ant-message-notice-content {
+  padding: 0.85rem 1.25rem !important;
+  background: var(--tui-base-02) !important;
+  border-radius: 5px !important;
+}
+
+.ant-message-success .anticon {
+  color: var(--tui-success-fill) !important;
+}
+
+.ant-modal-body {
+  padding: 1rem !important;
+}
+
+
+.ant-modal .ant-anchor-wrapper,
+.ant-modal .ant-card,
+.ant-modal .ant-collapse-content,
+.ant-modal .ant-picker-clear,
+.ant-modal .ant-slider-handle,
+.ant-modal .ant-timeline-item-head,
+.ant-modal-content,
+.ant-modal-header,
+.ant-drawer-content {
+  background-color: var(--tui-base-01) !important;
+}
