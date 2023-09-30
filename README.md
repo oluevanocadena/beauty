@@ -1,2 +1,1 @@
-# beauty
-Test Angular
+# Beauty Angular Test Project
